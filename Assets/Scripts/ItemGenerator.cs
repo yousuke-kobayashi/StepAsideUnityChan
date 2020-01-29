@@ -2,7 +2,7 @@
 using UnityEngine;
 
 public class ItemGenerator : MonoBehaviour {
-    //carPrefaを入れる
+    //carPrefabを入れる
     public GameObject carPrefab;
     //coinPrefabを入れる
     public GameObject coinPrefab;
@@ -15,10 +15,10 @@ public class ItemGenerator : MonoBehaviour {
     //アイテムを出すｘ方向の範囲
     float posRange = 3.4f;
 
-    public GameObject itemStorage;  //prefabの収納庫
+    public GameObject itemStorage;  //アイテムの収納庫
     GameObject unitychan;
-    float distance = 50.0f;
-    float itemPos;
+    float distance = 50.0f;  //distance(m)先にアイテムを生成
+    float itemPos;　//アイテム生成位置
 
 	void Start () {
         unitychan = GameObject.Find("unitychan");
@@ -64,9 +64,9 @@ public class ItemGenerator : MonoBehaviour {
 	}
 	
 	void Update () {
-        if (unitychan.transform.position.z + distance >= itemPos　&& unitychan.transform.position.z + distance <= goalPos)
+        if (unitychan.transform.position.z + distance >= itemPos　&& 
+            unitychan.transform.position.z + distance <= goalPos)
         {
-            //70～107行は上記を修正したものです
             //どのアイテムを出すのかをランダムに設定
             int num = Random.Range(1, 11);
             if (num <= 2)
