@@ -21,6 +21,12 @@ public class ItemDestroy : MonoBehaviour {
     //衝突したオブジェクトを破棄
     public void OnTriggerEnter(Collider other)
     {
-        Destroy(other.gameObject);
+        if (other.gameObject.tag == "CoinTag" ||
+            other.gameObject.tag == "CarTag" ||
+            other.gameObject.tag == "TrafficConeTag")
+        {
+            Destroy(other.gameObject);
+        }
+
     }
 }
