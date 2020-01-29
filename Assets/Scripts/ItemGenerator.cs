@@ -65,7 +65,7 @@ public class ItemGenerator : MonoBehaviour {
 	
 	void Update () {
         if (unitychan.transform.position.z + distance >= itemPos　&& 
-            unitychan.transform.position.z + distance <= goalPos)
+            unitychan.transform.position.z + distance < goalPos)
         {
             //どのアイテムを出すのかをランダムに設定
             int num = Random.Range(1, 11);
